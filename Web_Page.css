@@ -103,12 +103,18 @@ header h1{
 	position: absolute;
 	top: 260px;
 	margin-left: 25px;
+	height: 40px;
+	width: 40px;
+	clip-path: polygon(50% 0%, 100% 0%, 50% 50%, 100% 100%, 50% 100%, 0% 50%);
 }
 
 #next{
 	position: absolute;
 	top: 260px;
 	right: 25px;
+	height: 40px;
+	width: 40px;
+	clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%, 0% 100%, 50% 50%);
 }
 
 #dot-container{
@@ -126,6 +132,10 @@ header h1{
 	position: absolute;
 	top: 380px;
 	left: 610px;
+}
+
+#dotx1{
+	background-color: white;;
 }
 
 #dotx2{

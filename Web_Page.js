@@ -31,65 +31,72 @@ $(document).ready(function () {
     let pause = 3000;
     let currentSlide = 1;
 
-    let slideShow = $("#slideshow");
+    // let slideShow = $("#slideshow");
     let slider = $("#slider");
     let slide = $(slider).find(".section-1");
 
     let interval;
 
     function startSlider() {
-        dotColor();
+        // dotColor();
         interval = setInterval(function () {
-            
+
             slider.animate({ 'margin-left': '-=' + width }, animateSpeed, function () {
+
                 currentSlide++;
                 if (currentSlide >= slide.length) {
                     currentSlide = 1;
                     slider.css('margin-left', 0);
+
                 }
 
+                dotColor();
 
             });
         }, pause);
     }
 
-    function dotColor(){
+    function dotColor() {
         if (currentSlide == 1 || currentSlide == 4) {
-            $('#dotx1').css("background-color", "#666666");
-            $('#dotx2').css("background-color", "white");
+            $('#dotx1').css("background-color", "white");
+            $('#dotx2').css("background-color", "#666666");
             $('#dotx3').css("background-color", "#666666");
         }
         else if (currentSlide == 2) {
             $('#dotx1').css("background-color", "#666666");
-            $('#dotx2').css("background-color", "#666666");
-            $('#dotx3').css("background-color", "white");
+            $('#dotx2').css("background-color", "white");
+            $('#dotx3').css("background-color", "#666666");
         }
         else if (currentSlide == 3) {
-            $('#dotx1').css("background-color", "white");
+            $('#dotx1').css("background-color", "#666666");
             $('#dotx2').css("background-color", "#666666");
-            $('#dotx3').css("background-color", "#666666");
+            $('#dotx3').css("background-color", "white");
         }
     }
 
     $("#next").on("click", function () {
 
-        if (currentSlide == 3) {
-            $('#dotx1').css("background-color", "white");
-            $('#dotx2').css("background-color", "#666666");
-            $('#dotx3').css("background-color", "#666666");
+        if (currentSlide == 3 || currentSlide == 4) {
             currentSlide = 1;
+            dotColor();
+            clearInterval(interval);
+            startSlider();
             slider.css("margin-left", 0);
+
         }
-        else if (currentSlide == 4) {
-            $('#dotx1').css("background-color", "white");
-            $('#dotx2').css("background-color", "#666666");
-            $('#dotx3').css("background-color", "#666666");
-            currentSlide = 1;
-            slider.css("margin-left", 0);
+        else if (currentSlide == 1) {
+            currentSlide = 2;
+            dotColor();
+            clearInterval(interval);
+            startSlider();
+            slider.css("margin-left", -1355);
         }
-        else {
-            currentSlide++;
-            slider.css("margin-left", "-=" + width);
+        else if (currentSlide == 2) {
+            currentSlide = 3;
+            clearInterval(interval);
+            dotColor();
+            startSlider();
+            slider.css("margin-left", -2710);
         }
 
     });
@@ -97,35 +104,54 @@ $(document).ready(function () {
 
     $("#prev").on("click", function () {
 
-        if (currentSlide == 1) {
+        if (currentSlide == 1 || currentSlide == 4) {
             currentSlide = 3;
+            clearInterval(interval);
+            dotColor();
+            startSlider();
             slider.css("margin-left", -2710);
 
         }
-        else if (currentSlide == 4) {
-            currentSlide = 3;
+        else if (currentSlide == 3) {
+            currentSlide = 2;
+            clearInterval(interval);
+            dotColor();
+            startSlider();
+            slider.css("margin-left", -1355);
 
         }
-        else {
-            currentSlide--;
-            slider.css("margin-left", "+=" + width);
+        else if (currentSlide == 2) {
+            currentSlide = 1;
+            clearInterval(interval);
+            dotColor();
+            startSlider();
+            slider.css("margin-left", 0);
         }
 
     });
 
     $("#dotx1").click(function () {
         currentSlide = 1;
+        clearInterval(interval);
+        dotColor();
+        startSlider();
         slider.css("margin-left", 0);
     });
 
 
     $("#dotx2").click(function () {
         currentSlide = 2;
+        clearInterval(interval);
+        dotColor();
+        startSlider();
         slider.css("margin-left", -1355);
     });
 
     $("#dotx3").click(function () {
         currentSlide = 3;
+        clearInterval(interval);
+        dotColor();
+        startSlider();
         slider.css("margin-left", -2710);
     });
     // $("#dot1").click(dot1());
