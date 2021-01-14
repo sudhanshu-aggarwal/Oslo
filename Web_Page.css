@@ -103,18 +103,18 @@ header h1{
 	position: absolute;
 	top: 260px;
 	margin-left: 25px;
-	height: 40px;
-	width: 40px;
-	clip-path: polygon(50% 0%, 100% 0%, 50% 50%, 100% 100%, 50% 100%, 0% 50%);
+	height: 30px;
+	width: 30px;
+	clip-path: polygon(70% 0%, 100% 0%, 70% 50%, 100% 100%, 70% 100%, 0% 50%);
 }
 
 #next{
 	position: absolute;
 	top: 260px;
 	right: 25px;
-	height: 40px;
-	width: 40px;
-	clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%, 0% 100%, 50% 50%);
+	height: 30px;
+	width: 30px;
+	clip-path: polygon(0% 0%, 30% 0%, 100% 50%, 30% 100%, 0% 100%, 30% 50%);
 }
 
 /* #dot-container{
