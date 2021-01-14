@@ -80,23 +80,26 @@ $(document).ready(function () {
             currentSlide = 1;
             dotColor();
             clearInterval(interval);
+
+            slider.animate({ "margin-left": 0 }, 500);
             startSlider();
-            slider.css("margin-left", 0);
 
         }
         else if (currentSlide == 1) {
             currentSlide = 2;
             dotColor();
             clearInterval(interval);
+
+            slider.animate({ "margin-left": -1355 }, 500);
             startSlider();
-            slider.css("margin-left", -1355);
         }
         else if (currentSlide == 2) {
             currentSlide = 3;
             clearInterval(interval);
             dotColor();
+
+            slider.animate({ "margin-left": -2710 }, 500);
             startSlider();
-            slider.css("margin-left", -2710);
         }
 
     });
@@ -108,24 +111,24 @@ $(document).ready(function () {
             currentSlide = 3;
             clearInterval(interval);
             dotColor();
-            startSlider();
-            slider.css("margin-left", -2710);
 
+            slider.animate({ "margin-left": -2710 }, 500);
+            startSlider();
         }
         else if (currentSlide == 3) {
             currentSlide = 2;
             clearInterval(interval);
             dotColor();
+            slider.animate({ "margin-left": -1355 }, 500);
             startSlider();
-            slider.css("margin-left", -1355);
 
         }
         else if (currentSlide == 2) {
             currentSlide = 1;
             clearInterval(interval);
             dotColor();
+            slider.animate({ "margin-left": 0 }, 500);
             startSlider();
-            slider.css("margin-left", 0);
         }
 
     });
@@ -134,8 +137,8 @@ $(document).ready(function () {
         currentSlide = 1;
         clearInterval(interval);
         dotColor();
+        slider.animate({ "margin-left": 0 }, 500);
         startSlider();
-        slider.css("margin-left", 0);
     });
 
 
@@ -143,16 +146,16 @@ $(document).ready(function () {
         currentSlide = 2;
         clearInterval(interval);
         dotColor();
+        slider.animate({ "margin-left": -1355 }, 500);
         startSlider();
-        slider.css("margin-left", -1355);
     });
 
     $("#dotx3").click(function () {
         currentSlide = 3;
         clearInterval(interval);
         dotColor();
+        slider.animate({ "margin-left": -2710 }, 500);
         startSlider();
-        slider.css("margin-left", -2710);
     });
     // $("#dot1").click(dot1());
     // $("#dot10").click(dot1());

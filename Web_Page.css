@@ -117,10 +117,10 @@ header h1{
 	clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%, 0% 100%, 50% 50%);
 }
 
-#dot-container{
+/* #dot-container{
 	display: inline-flex;
 	margin-left: 160px;
-}
+} */
 
 .dotx{
 	width: 25px;
